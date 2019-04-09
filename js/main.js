@@ -48,3 +48,11 @@ var bFlatMaj = ['B♭', 'Cm', 'Dm', 'E♭', 'F', 'Gm', 'Adim'];
 var bSharpMaj = ['B♯', 'C♯♯m', 'D♯♯m', 'E♯', 'F♯♯', 'G♯♯m', 'A♯♯dim'];
 var bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 var bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
+
+// Function to randomly generate chord
+function getRandomChord(key) {
+    var randomChord = key[Math.floor(Math.random() * key.length)];
+    return randomChord;
+}
+
+console.log(getRandomChord(gMaj));
