@@ -18,16 +18,16 @@
     <h2>Chords</h2>
     <section class="chords">
         <section class="chord-box-container">
-        <div class="chord-box"></div>
-        <div class="chord-box"></div>
-        <div class="chord-box"></div>
-        <div class="chord-box"></div>
+        <div id="chord-box"></div>
+        <div id="chord-box"></div>
+        <div id="chord-box"></div>
+        <div id="chord-box"></div>
         </section>
     </section>
     <!-- Key selector -->
-    <form class="note">
+    <!--<form name="key-form" id="key-selector" onsubmit="keySelect()">-->
         <legend>Key</legend>
-        <select class="note-selector">
+        <select id="note-selector" name="note" onchange="keySelect()">
             <option value="C">C</option>
             <option value="D">D</option>
             <option value="E">E</option>
@@ -37,18 +37,18 @@
             <option value="B">B</option>
         </select>
         <!-- Select sharp, flat or none -->
-        <select class="sharp-flat">
+        <select id="sharp-flat" name="sharpFlat" onchange="keySelect()">
             <option value="sharp">♯</option>
             <option value="none"></option>
             <option value="flat">♭</option>
         </select>
         <!-- Select major or minor -->
-        <select class="major-minor">
+        <select id="major-minor" name="majorMinor" onchange="keySelect()">
             <option value="major">Major</option>
-            <option value="major">Minor</option>
+            <option value="minor">Minor</option>
         </select>
         <button class="generate">Generate</button>
-    </form>
+    <!--</form>-->
     </main>
 <script src="js/main.js"></script>    
 </body>

@@ -1,4 +1,4 @@
-// Each key has an array of all chords found in key ♭♯
+// Each key has an array of all chords found in key
 // Key: C
 var cMaj = ['C', 'Dm', 'Em', 'F', 'G', 'Am', 'Bdim'];
 var cMin = ['Cm', 'Ddim', 'E♭', 'Fm', 'Gm', 'A♭', 'B♭'];
@@ -49,10 +49,40 @@ var bSharpMaj = ['B♯', 'C♯♯m', 'D♯♯m', 'E♯', 'F♯♯', 'G♯♯m', 
 var bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 var bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
 
-// Function to randomly generate chord
+// Div that chords will be displayed in
+var chordBox = document.getElementById('chord-box');
+
+// Randomly generate a chord
 function getRandomChord(key) {
     var randomChord = key[Math.floor(Math.random() * key.length)];
     return randomChord;
 }
 
-console.log(getRandomChord(gMaj));
+// 
+function keySelect() {
+  var note = document.getElementById('note-selector').value;
+  var sharpOrFlat = document.getElementById('sharp-flat').value;
+  var majOrMin = document.getElementById('major-minor').value;
+  if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+    chordBox.innerHTML = (getRandomChord(cSharpMaj));
+  } else if (note === 'C' && sharpOrFlat === 'none' && majOrMin === 'major') {
+    chordBox.innerHTML = (getRandomChord(cMaj));
+  } else {
+    chordBox.innerHTML = '';
+  }
+}
+
+
+
+
+
+/*function keySelect() {
+    var note = document.getElementById('note-selector').value;
+    var sharpOrFlat = document.getElementById('sharp-flat').value;
+    var majOrMin = document.getElementById('major-minor').value;
+    if(note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+        console.log(getRandomChord(cSharpMaj));
+    }
+}
+
+keySelect();*/
