@@ -49,6 +49,8 @@ var bSharpMaj = ['B♯', 'C♯♯m', 'D♯♯m', 'E♯', 'F♯♯', 'G♯♯m', 
 var bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 var bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
 
+// Empty array to store 4 random chords
+var chordsArr = [];
 // Div that chords will be displayed in
 var chordBox = document.getElementById('chord-box');
 
@@ -58,7 +60,6 @@ function getRandomChord(key) {
     return randomChord;
 }
 
-// 
 function keySelect() {
   var note = document.getElementById('note-selector').value;
   var sharpOrFlat = document.getElementById('sharp-flat').value;
@@ -68,11 +69,11 @@ function keySelect() {
   } else if (note === 'C' && sharpOrFlat === 'none' && majOrMin === 'major') {
     chordBox.innerHTML = (getRandomChord(cMaj));
   } else {
-    chordBox.innerHTML = '';
+    chordBox.innerHTML = 'nope';
   }
 }
 
-
+keySelect();
 
 
 
