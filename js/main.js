@@ -50,7 +50,7 @@ var bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 var bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
 
 // Empty array to store 4 random chords
-var chordsArr = [];
+var chordsArray = [];
 // Div that chords will be displayed in
 var chordBox = document.getElementById('chord-box');
 
@@ -60,14 +60,20 @@ function getRandomChord(key) {
     return randomChord;
 }
 
+// Generates random chord depending on which key is selected
+// and adds to new array - currently only working for C major and 
+// C♯ major whilst testing.
 function keySelect() {
   var note = document.getElementById('note-selector').value;
   var sharpOrFlat = document.getElementById('sharp-flat').value;
   var majOrMin = document.getElementById('major-minor').value;
   if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-    chordBox.innerHTML = (getRandomChord(cSharpMaj));
+    //chordBox.innerHTML = (getRandomChord(cSharpMaj));
+    for (var i = 0; i < 4; i += 1) {
+      chordsArray.push(getRandomChord(cSharpMaj)); 
+    }
   } else if (note === 'C' && sharpOrFlat === 'none' && majOrMin === 'major') {
-    chordBox.innerHTML = (getRandomChord(cMaj));
+    //chordBox.innerHTML = (getRandomChord(cMaj));
   } else {
     chordBox.innerHTML = 'nope';
   }
@@ -75,15 +81,5 @@ function keySelect() {
 
 keySelect();
 
-
-
-/*function keySelect() {
-    var note = document.getElementById('note-selector').value;
-    var sharpOrFlat = document.getElementById('sharp-flat').value;
-    var majOrMin = document.getElementById('major-minor').value;
-    if(note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-        console.log(getRandomChord(cSharpMaj));
-    }
-}
-
-keySelect();*/
+// Next step - get items send to chordsArray to not repeat
+// and then display 4 chords in their own chord box.
