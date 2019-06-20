@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700');
 
 body {
-    font-family: 'Ubuntu', sans-serif; 
+  font-family: 'Ubuntu', sans-serif; 
 }
 
 .chords {
@@ -10,13 +10,13 @@ body {
 }
 
 .chord-box-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    align-items: center;
-    height: 300px;
-    width: 300px;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  height: 300px;
+  width: 300px;
+}
   
 .chord-box {
   width: 135px;

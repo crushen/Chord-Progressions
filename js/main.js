@@ -48,46 +48,51 @@ const bFlatMaj = ['B♭', 'Cm', 'Dm', 'E♭', 'F', 'Gm', 'Adim'];
 const bSharpMaj = ['B♯', 'C♯♯m', 'D♯♯m', 'E♯', 'F♯♯', 'G♯♯m', 'A♯♯dim'];
 const bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 const bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
-
-// Empty array to store 4 random chords
-const chordsArray = [];
 // Array of all chord boxes
 const chordBoxes = document.querySelectorAll('.chord-box');
+// Empty array to store 4 random chords
+const chordsArray = [];
+// Selector values
 
 // Randomly generate a chord
 function getRandomChord(key) {
-    const randomChord = key[Math.floor(Math.random() * key.length)];
-    return randomChord;
+  const randomChord = key[Math.floor(Math.random() * key.length)];
+  return randomChord;
 }
-
 // Generates random chord depending on which key is selected
-// and adds to new array - currently only working for C major and 
-// C♯ major whilst testing.
+// and adds to new array - currently only working for C # major and D # major
 function keySelect() {
   const note = document.getElementById('note-selector').value;
   const sharpOrFlat = document.getElementById('sharp-flat').value;
   const majOrMin = document.getElementById('major-minor').value;
+  const container = document.querySelector('.chord-box-container');
+  // Reset the container every time so that boxes don't repeat
+  container.innerHTML = '';
   if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+    chordsArray.length = 0;
     for (let i = 0; i < 4; i += 1) {
-      chordsArray.push(getRandomChord(cSharpMaj)); 
+      chordsArray.push(getRandomChord(cSharpMaj));
+      
     }
-    // chordsArray.forEach((chord, index) => {
-    //   for (let i = 0; i < chordBoxes.length; i += 1) {
-    //     chordBoxes[i].innerHTML = chord;
-    //   }
-    // });
+  } else if (note === 'D' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+    chordsArray.length = 0;
+    for (let i = 0; i < 4; i += 1) {
+      chordsArray.push(getRandomChord(dSharpMaj));
+       
+    }
+  } else {
+    chordsArray.length = 0;
+    chordsArray.push('none');
+  }
+  for (let chord in chordsArray) {
+    const newElement = document.createElement('div');
+    newElement.className = 'chord-box';
+    newElement.innerHTML = chordsArray[chord];
+    container.appendChild(newElement);
   } 
+  console.log(chordsArray);
 }
 
 keySelect();
 
-for (let chord in chordsArray) {
-    const newElement = document.createElement('div');
-    newElement.innerHTML = chordsArray[chord];
-    document.body.appendChild(newElement);
-    console.log(newElement);
-} 
-
 // Next step - get items send to chordsArray to not repeat
-// and then display 4 chords in their own chord box.
-
