@@ -52,13 +52,45 @@ const bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', '
 const chordBoxes = document.querySelectorAll('.chord-box');
 // Empty array to store 4 random chords
 const chordsArray = [];
-// Selector values
+const uniqueChordsArray = [];
+
 
 // Randomly generate a chord
-function getRandomChord(key) {
-  const randomChord = key[Math.floor(Math.random() * key.length)];
-  return randomChord;
+// function getRandomChord(key) {
+//   const randomChord = key[Math.floor(Math.random() * key.length)];
+//   return randomChord;
+// }
+
+
+const array = [];
+
+function getRandomChords(key) {
+  for (let i = 0; i < key.length; i += 1) {
+    array.push(key[i]);
+  }
+  // let start = 0;
+  // const end = array.length;
+  // for (let i = 0; i < 4; i++) {
+  //   // Random index from range [start, end)
+  //   const randomIndex = Math.floor(Math.random() * (end - start)) + start;
+  //   // Get the random element
+  //   const x = array[randomIndex];
+  //   // Swap the random element
+  //   array[randomIndex] = array[start];
+  //   array[start] = x;
+  //   // Increment the start range
+  //   start++;
+  //   console.log(x);
+  //   chordsArray.push(x);
+  // }
+  if(array.length > 0) {
+    var index = Math.floor(Math.random() * array.length)
+    var chord = array[index];
+    array.push(index, 1);
+   }
 }
+
+
 // Generates random chord depending on which key is selected
 // and adds to new array - currently only working for C # major and D # major
 function keySelect() {
@@ -67,21 +99,13 @@ function keySelect() {
   const majOrMin = document.getElementById('major-minor').value;
   const container = document.querySelector('.chord-box-container');
   // Reset the container every time so that boxes don't repeat
+  chordsArray.length = 0;
   container.innerHTML = '';
   if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-    chordsArray.length = 0;
-    for (let i = 0; i < 4; i += 1) {
-      chordsArray.push(getRandomChord(cSharpMaj));
-      
-    }
+    getRandomChords(cSharpMaj);
   } else if (note === 'D' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-    chordsArray.length = 0;
-    for (let i = 0; i < 4; i += 1) {
-      chordsArray.push(getRandomChord(dSharpMaj));
-       
-    }
+    getRandomChords(dSharpMaj);
   } else {
-    chordsArray.length = 0;
     chordsArray.push('none');
   }
   for (let chord in chordsArray) {
@@ -90,9 +114,31 @@ function keySelect() {
     newElement.innerHTML = chordsArray[chord];
     container.appendChild(newElement);
   } 
-  console.log(chordsArray);
 }
 
 keySelect();
 
+
 // Next step - get items send to chordsArray to not repeat
+
+// function hasDuplicates(array) {
+//   return (new Set(array)).size !== array.length;
+// }
+
+// console.log(hasDuplicates(chordsArray));
+
+// if (a.indexOf(value)==-1) a.push(value);
+
+const myArray = [1,2,3,4,5];
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+shuffle(myArray);
+
+console.log(myArray);
