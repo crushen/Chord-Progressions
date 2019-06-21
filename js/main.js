@@ -62,12 +62,32 @@ const uniqueChordsArray = [];
 // }
 
 
+const myArray = [1,2,3,4,5];
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+shuffle(myArray);
+
+console.log(myArray);
+
+
 const array = [];
 
 function getRandomChords(key) {
   for (let i = 0; i < key.length; i += 1) {
     array.push(key[i]);
   }
+  shuffle(array);
+  for (let i = 0; i < 4; i += 1) {
+    uniqueChordsArray.push(array[i]);
+  }
+  
   // let start = 0;
   // const end = array.length;
   // for (let i = 0; i < 4; i++) {
@@ -83,13 +103,12 @@ function getRandomChords(key) {
   //   console.log(x);
   //   chordsArray.push(x);
   // }
-  if(array.length > 0) {
-    var index = Math.floor(Math.random() * array.length)
-    var chord = array[index];
-    array.push(index, 1);
-   }
+  // if(array.length > 0) {
+  //   var index = Math.floor(Math.random() * array.length)
+  //   var chord = array[index];
+  //   array.push(index, 1);
+  //  }
 }
-
 
 // Generates random chord depending on which key is selected
 // and adds to new array - currently only working for C # major and D # major
@@ -129,16 +148,5 @@ keySelect();
 
 // if (a.indexOf(value)==-1) a.push(value);
 
-const myArray = [1,2,3,4,5];
-
-function shuffle(a) {
-  for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
-shuffle(myArray);
-
-console.log(myArray);
+console.log(array);
+console.log(uniqueChordsArray);
