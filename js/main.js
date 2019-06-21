@@ -67,7 +67,7 @@ function getRandomChords(key) {
   for (let i = 0; i < key.length; i += 1) {
     chordsArray.push(key[i]);
   }
-  shuffle(chordsArray);
+  // shuffle(chordsArray);
   for (let i = 0; i < 4; i += 1) {
     uniqueChordsArray.push(chordsArray[i]);
   }
@@ -75,22 +75,30 @@ function getRandomChords(key) {
   console.log(uniqueChordsArray);
 }
 
-function keySelect() {
+function chooseKey(n, sOf, mOm, key) {
   const note = document.getElementById('note-selector').value;
   const sharpOrFlat = document.getElementById('sharp-flat').value;
   const majOrMin = document.getElementById('major-minor').value;
+  if (note === n && sharpOrFlat === sOf && majOrMin === mOm) {
+    getRandomChords(key);
+  }
+}
+
+function keySelect() {
   const container = document.querySelector('.chord-box-container');
   // Reset the container every time so that boxes don't repeat
   container.innerHTML = '';
+  chooseKey('C', 'sharp', 'major', cSharpMaj);
+  chooseKey('D', 'sharp', 'major', dSharpMaj);
+  chooseKey('E', 'sharp', 'major', eSharpMaj);
 
-  
-  if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-    getRandomChords(cSharpMaj);
-  } else if (note === 'D' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
-    getRandomChords(dSharpMaj);
-  } else {
-    uniqueChordsArray.push('none');
-  }
+  // if (note === 'C' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+  //   getRandomChords(cSharpMaj);
+  // } else if (note === 'D' && sharpOrFlat === 'sharp' && majOrMin === 'major') {
+  //   getRandomChords(dSharpMaj);
+  // } else {
+  //   uniqueChordsArray.push('none');
+  // }
 
 
 
