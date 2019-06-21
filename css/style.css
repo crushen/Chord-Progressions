@@ -28,14 +28,17 @@ header h1 {
   -webkit-text-fill-color: transparent;
 }
 
+main {
+  height: 85vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
 main h2 {
   font-size: 28px;
   font-weight: 500;
-}
-
-.chords {
-  display: flex;
-  justify-content: center;
 }
 
 .chord-box-container {
@@ -60,4 +63,20 @@ main h2 {
   -webkit-box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
   -moz-box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
   box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
+}
+
+#generate {
+  font-family: 'Ubuntu', sans-serif; 
+  font-size: 28px;
+  font-weight: 500;
+  color: #FFF;
+  padding: 20px 30px;
+  border-radius: 50px;
+  border: none;
+  background: rgb(73,222,190);
+  background: linear-gradient(90deg, rgba(73,222,190,1) 0%, rgba(123,208,240,1) 100%);
+}
+
+.fa-sync-alt {
+  padding-right: 16px;
 }
