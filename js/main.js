@@ -144,4 +144,11 @@ function keySelect() {
   } 
 }
 
+const generateBtn = document.querySelector('#generate');
+
+generateBtn.addEventListener('click', () => {
+  keySelect();
+});
+
 keySelect();
+
