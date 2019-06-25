@@ -2,7 +2,7 @@
 
 body {
   font-family: 'Ubuntu', sans-serif; 
-  background: #dee7ef;
+  background: #eff5f9;
   color: #575757;
 }
 
@@ -13,9 +13,9 @@ header {
   display: flex;
   align-items: center;
   padding: 16px;
-  -webkit-box-shadow: 0px 5px 6px 0px rgba(201,201,201,1);
-  -moz-box-shadow: 0px 5px 6px 0px rgba(201,201,201,1);
-  box-shadow: 0px 5px 6px 0px rgba(201,201,201,1);
+  -webkit-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
+  box-shadow: 4px 4px 4px 0px rgba(204,204,204,1);
 }
 
 header h1 {
@@ -62,9 +62,9 @@ main h2 {
   justify-content: center;
   align-items: center;
   background: #FFF;
-  -webkit-box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
-  -moz-box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
-  box-shadow: 0px 5px 6px 0px rgba(230,230,230,1);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
 }
 
 form legend {
@@ -86,6 +86,9 @@ select {
   padding: 1em 2em;
   font-size: 1em;
   margin: 5px;
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
 }
 .select-container {
   position: relative; 
@@ -124,8 +127,23 @@ select::-ms-expand {
   border: none;
   background: rgb(73,222,190);
   background: linear-gradient(90deg, rgba(73,222,190,1) 0%, rgba(123,208,240,1) 100%);
+  -webkit-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  -moz-box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
+  box-shadow: 0px 4px 4px 0px rgba(204,204,204,1);
 }
 
 .fa-sync-alt {
   padding-right: 16px;
+}
+
+@media only screen and (min-width: 1000px) {
+ 
+  header {
+    padding-left: 5%;
+ }
+
+ .chord-box-container {
+   width: 650px;
+   height: 150px;
+ }
 }
