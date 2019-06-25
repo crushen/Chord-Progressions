@@ -5,19 +5,19 @@ const cMin = ['Cm', 'Ddim', 'E♭', 'Fm', 'Gm', 'A♭', 'B♭'];
 const cSharpMaj = ['C♯', 'D♯m', 'E♯m', 'F♯', 'G♯', 'A♯m', 'B♯dim'];
 const cSharpMin = ['C♯m', 'D♯dim', 'E', 'F♯m', 'G♯m', 'A', 'B'];
 const cFlatMaj = ['C♭', 'D♭m', 'E♭m', 'F♭', 'G♭', 'A♭m', 'B♭dim'];
-const cFlatMin = ['C♭m', 'D♭dim', 'E♭♭', 'F♭m', 'G♭m', 'A♭♭', 'B♭♭'];
+const cFlatMin = ['C♭m', 'D♭dim', 'C', 'F♭m', 'G♭m', 'F', 'G'];
 // Key: D 
 const dMaj = ['D', 'Em', 'F♯m', 'G', 'A', 'Bm', 'C♯dim'];
 const dMin = ['Dm', 'Edim', 'F', 'Gm', 'Am', 'B♭', 'C'];
-const dSharpMaj = ['D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯', 'B♯m', 'C♯♯dim'];
+const dSharpMaj = ['D♯', 'E♯m', 'Am', 'G♯', 'A♯', 'B♯m', 'Edim'];
 const dSharpMin = ['D♯m', 'E♯dim', 'F♯', 'G♯m', 'A♯m', 'B', 'C♯'];
 const dFlatMaj = ['D♭', 'E♭m', 'Fm', 'G♭', 'A♭', 'B♭m', 'Cdim'];
-const dFlatMin = ['D♭m', 'E♭dim', 'F♭', 'G♭m', 'A♭m', 'B♭♭', 'C♭'];
+const dFlatMin = ['D♭m', 'E♭dim', 'F♭', 'G♭m', 'A♭m', 'G', 'C♭'];
 // Key: E
 const eMaj = ['E', 'F♯m', 'G♯m', 'A', 'B', 'C♯m', 'D♯dim'];
 const eMin = ['Em', 'F♯dim', 'G', 'Am', 'Bm', 'C', 'D'];
-const eSharpMaj = ['E♯', 'F♯♯m', 'G♯♯m', 'A♯', 'B♯', 'C♯♯m', 'D♯♯dim'];
-const eSharpMin = ['E♯m', 'F♯♯dim', 'G♯', 'A♯m', 'B♯m', 'C♯', 'D♯'];
+const eSharpMaj = ['E♯', 'Am', 'Bm', 'A♯', 'B♯', 'Em', 'Fdim'];
+const eSharpMin = ['E♯m', 'Adim', 'G♯', 'A♯m', 'B♯m', 'C♯', 'D♯'];
 const eFlatMaj = ['E♭', 'Fm', 'Gm', 'A♭', 'B♭', 'Cm', 'Ddim'];
 const eFlatMin = ['E♭m', 'Fdim', 'G♭', 'A♭m', 'B♭m', 'C♭', 'D♭'];
 // Key: F
@@ -25,27 +25,27 @@ const fMaj = ['F', 'Gm', 'Am', 'B♭', 'C', 'Dm', 'Edim'];
 const fMin = ['Fm', 'Gdim', 'A♭', 'B♭m', 'Cm', 'D♭', 'E♭'];
 const fSharpMaj = ['F♯', 'G♯m', 'A♯m', 'B', 'C♯', 'D♯m', 'E♯dim'];
 const fSharpMin = ['F♯m', 'G♯dim', 'A', 'Bm', 'C♯m', 'D', 'E'];
-const fFlatMaj = ['F♭', 'G♭m', 'A♭m', 'B♭♭', 'C♭', 'D♭m', 'E♭dim'];
-const fFlatMin = ['F♭m', 'G♭dim', 'A♭♭', 'B♭♭m', 'C♭m', 'D♭♭', 'E♭♭'];
+const fFlatMaj = ['F♭', 'G♭m', 'A♭m', 'G', 'C♭', 'D♭m', 'E♭dim'];
+const fFlatMin = ['F♭m', 'G♭dim', 'F', 'Gm', 'C♭m', 'B', 'C'];
 // Key: G
 const gMaj = ['G', 'Am', 'Bm', 'C', 'D', 'Em', 'F♯dim'];
 const gMin = ['Gm', 'Adim', 'B♭', 'Cm', 'Dm', 'E♭', 'F'];
-const gSharpMaj = ['G♯', 'A♯m', 'B♯m', 'C♯', 'D♯', 'E♯m', 'F♯♯dim'];
+const gSharpMaj = ['G♯', 'A♯m', 'B♯m', 'C♯', 'D♯', 'E♯m', 'Adim'];
 const gSharpMin = ['G♯m', 'A♯dim', 'B', 'C♯m', 'D♯m', 'E', 'F♯'];
 const gFlatMaj = ['G♭', 'A♭m', 'B♭m', 'C♭', 'D♭', 'E♭m', 'Fdim'];
-const gFlatMin = ['G♭m', 'A♭dim', 'B♭♭', 'C♭m', 'D♭m', 'E♭♭', 'F♭'];
+const gFlatMin = ['G♭m', 'A♭dim', 'G', 'C♭m', 'D♭m', 'C', 'F♭'];
 // Key: A
 const aMaj = ['A', 'Bm', 'C♯m', 'D', 'E', 'F♯m', 'G♯dim'];
 const aMin = ['Am', 'Bdim', 'C', 'Dm', 'Em', 'F', 'G'];
-const aSharpMaj = ['A♯', 'B♯m', 'C♯♯m', 'D♯', 'E♯', 'F♯♯m', 'G♯♯dim'];
+const aSharpMaj = ['A♯', 'B♯m', 'Em', 'D♯', 'E♯', 'Am', 'Bdim'];
 const aSharpMin = ['A♯m', 'B♯dim', 'C♯', 'D♯m', 'E♯m', 'F♯', 'G♯'];
 const aFlatMaj = ['A♭', 'B♭m', 'Cm', 'D♭', 'E♭', 'Fm', 'Gdim'];
 const aFlatMin = ['A♭m', 'B♭dim', 'C♭', 'D♭m', 'E♭m', 'F♭', 'G♭'];
 // Key: B
 const bMaj = ['B', 'C♯m', 'D♯m', 'E', 'F♯', 'G♯m', 'A♯dim'];
 const bMin = ['Bm', 'C♯dim', 'D', 'Em', 'F♯m', 'G', 'A'];
-const bSharpMaj = ['B♯', 'C♯♯m', 'D♯♯m', 'E♯', 'F♯♯', 'G♯♯m', 'A♯♯dim'];
-const bSharpMin = ['B♯m', 'C♯♯dim', 'D♯', 'E♯m', 'F♯♯m', 'G♯', 'A♯'];
+const bSharpMaj = ['B♯', 'Em', 'Fm', 'E♯', 'A', 'Bm', 'Cdim'];
+const bSharpMin = ['B♯m', 'Edim', 'D♯', 'E♯m', 'Am', 'G♯', 'A♯'];
 const bFlatMaj = ['B♭', 'Cm', 'Dm', 'E♭', 'F', 'Gm', 'Adim'];
 const bFlatMin = ['B♭m', 'Cdim', 'D♭', 'E♭m', 'Fm', 'G♭', 'A♭'];
 
